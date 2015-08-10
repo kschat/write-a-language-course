@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "babel": "^5.8.21",
+    "ramda": "^0.17.1"
+  }
+}
