@@ -22,3 +22,8 @@ export const par = {
   }
 };
 
+export const repeat = {
+  tag: 'repeat',
+  section: { tag: 'note', pitch: 'a4', dur: 250 },
+  count: 4
+};

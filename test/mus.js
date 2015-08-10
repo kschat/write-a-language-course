@@ -31,5 +31,32 @@ describe('mus', function() {
         { tag: 'note', pitch: 'f4', start: 500, dur: 250 }
       ]);
     });
+
+    it('should compile repeat\'s', () => {
+      const output = mus.compile(fixtures.repeat);
+
+      expect(output).to.deep.equal([
+        { tag: 'note', pitch: 'a4', start: 0, dur: 250 },
+        { tag: 'note', pitch: 'a4', start: 250, dur: 250 },
+        { tag: 'note', pitch: 'a4', start: 500, dur: 250 },
+        { tag: 'note', pitch: 'a4', start: 750, dur: 250 }
+      ]);
+    });
+
+    it('should compile par\'s with repeat\'s', () => {
+      const output = mus.compile({
+        tag: 'par',
+        left: fixtures.note,
+        right: fixtures.repeat
+      });
+
+      expect(output).to.deep.equal([
+        { tag: 'note', pitch: 'e5', start: 0, dur: 500 },
+        { tag: 'note', pitch: 'a4', start: 0, dur: 250 },
+        { tag: 'note', pitch: 'a4', start: 250, dur: 250 },
+        { tag: 'note', pitch: 'a4', start: 500, dur: 250 },
+        { tag: 'note', pitch: 'a4', start: 750, dur: 250 }
+      ]);
+    });
   });
 });
