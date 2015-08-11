@@ -12,6 +12,14 @@ describe('mus', function() {
       ]);
     });
 
+    it('should compile rests', () => {
+      const output = mus.compile(fixtures.rest);
+
+      expect(output).to.deep.equal([
+        { tag: 'rest', start: 0, dur: 300 }
+      ]);
+    });
+
     it('should compile seq\'s', () => {
       const output = mus.compile(fixtures.seq);
 

@@ -2,6 +2,8 @@
 
 export const note = { tag: 'note', pitch: 'e5', dur: 500 };
 
+export const rest = { tag: 'rest', dur: 300 };
+
 export const seq = {
   tag: 'seq',
   left: note,
